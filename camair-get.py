@@ -32,7 +32,7 @@ def main(host):
         logo = getcam(sock, 0x0c, preset)
         presets[preset+1] = dict({"name": name, "stream": stream, "logo": logo})
     sock.close()
-    print(json.dumps(presets, sort_keys=True, indent=4))
+    print(json.dumps(presets, sort_keys=True, indent=4, ensure_ascii=False))
 
 
 if __name__ == "__main__":
