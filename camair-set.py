@@ -45,11 +45,11 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Cambridge Audio Air')
-    parser.add_argument('--host', metavar='host', type=str, required=True, help='Cambridge Audio Air IP address')
+    parser.add_argument('--host', metavar='host', type=str, required=True, help='Cambridge Audio Air IP Address')
     parser.add_argument('--preset', metavar='preset', type=int, required=True, help='Preset (1-10)')
     parser.add_argument('--set-name', metavar='name', type=str, required=False, help='Station Name')
-    parser.add_argument('--set-stream', metavar='stream', type=str, required=False, help='Station Name')
-    parser.add_argument('--set-logo', metavar='logo', type=str, required=False, help='Station Name')
+    parser.add_argument('--set-stream', metavar='stream', type=str, required=False, help='Station Stream URL')
+    parser.add_argument('--set-logo', metavar='logo', type=str, required=False, help='Station Logo URL')
     args = parser.parse_args()
     assert(args.preset>0 and args.preset<11), "Preset must be in 1..10 range"
     main(args)

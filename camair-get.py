@@ -37,6 +37,6 @@ def main(host):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Cambridge Audio Air - Preset Dump')
-    parser.add_argument('--host', metavar='host', type=str, required=True, help='Cambridge Audio Air IP address')
+    parser.add_argument('--host', metavar='host', type=str, required=True, help='Cambridge Audio Air IP Address')
     args = parser.parse_args()
     main(args.host)
