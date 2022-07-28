@@ -6,19 +6,19 @@ import argparse
 import json
 
 def getcam(sock, opcode, preset):
-
     values = (0x00, 0x02, opcode, preset)
     packer = struct.Struct('bbbb')
     packed_data = packer.pack(*values)
-    url = None
+    preset_data = None
 
     # Send data
     sock.sendall(packed_data)
     (status, xlen) = sock.recv(2)
     data = sock.recv(int(xlen))
     if data[0] == 0xff and data[1] == 0x01:
-        url = data[2:].decode("utf-8")
-    return url
+        preset_data = data[2:].decode("utf-8")
+    return preset_data
+
 
 def main(host):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,6 +33,7 @@ def main(host):
         presets[preset+1] = dict({"name": name, "stream": stream, "logo": logo})
     sock.close()
     print(json.dumps(presets, sort_keys=True, indent=4))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Cambridge Audio Air - Preset Dump')
