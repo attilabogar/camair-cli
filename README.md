@@ -2,9 +2,9 @@
 
 ## About
 
-These two utilities allow you to dump the preset settings on a Cambridge Audio
-Air v2 network streamer/speaker.  It might be compatible with Cambridge Audio
-Minx devices, though not tested as I don't own a Minx.
+These two utilities allow you to reveal / set the radio preset settings on a
+Cambridge Audio Air v2 network streamer/speaker.  It might be compatible with
+Cambridge Audio Minx devices, though not tested as I don't own a Minx.
 
 ## Why?
 
