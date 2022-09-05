@@ -2,19 +2,22 @@
 
 ## About
 
-These two utilities allow you to reveal / set the radio preset settings on a
-Cambridge Audio Air v2 network streamer/speaker.  It might be compatible with
-Cambridge Audio Minx devices, though not tested as I don't own a Minx.
+These utilities allow you to reveal / set the radio preset settings on a
+Cambridge Audio Air v2 network streamer/speaker as well as play an ad-hoc radio
+station.  It might be compatible with Cambridge Audio Minx devices, though not
+tested as I don't own a Minx.
 
 ## Background
 
 My Cambridge Audio Air v2 stopped playing Classic FM.  Wireshark came to the
 rescue, I noticed the device tries to play the Classic FM radio via an https
-stream and the TLSv1.2 negotiation fails.  Then I started inspecting the binary
-control protocol between the Android Air app and the device.  As a result, here
-are two prototyped python cli programs - `camair-get.py` and `camair-set.py`.
-I was able to overwrite the preset's stream url to use a plain http stream for
-Classic FM.  🙂
+stream but the TLSv1.2 negotiation keeps failing.  Then I started inspecting
+the binary control protocol between the Android "Air" app and the device.  As a
+result, here are three prototyped python cli programs -
+`camair-preset-dump.py`, `camair-preset-change.py` and `camair-play.py`.
+Finally I was able to overwrite the preset's stream url to use a plain http
+stream for Classic FM from the http url I found in
+[radiofeeds](http://radiofeeds.co.uk/) 🙂
 
 ## Usage
 
