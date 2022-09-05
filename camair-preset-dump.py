@@ -5,7 +5,7 @@ import sys
 import argparse
 import json
 
-def getcam(sock, opcode, preset):
+def getcam_preset(sock, opcode, preset):
     values = (0x00, 0x02, opcode, preset)
     packer = struct.Struct('bbbb')
     packed_data = packer.pack(*values)
@@ -27,9 +27,9 @@ def main(host):
 
     presets = dict({})
     for preset in range(0,10):
-        name = getcam(sock, 0x0a, preset)
-        stream = getcam(sock, 0x08, preset)
-        logo = getcam(sock, 0x0c, preset)
+        name = getcam_preset(sock, 0x0a, preset)
+        stream = getcam_preset(sock, 0x08, preset)
+        logo = getcam_preset(sock, 0x0c, preset)
         presets[preset+1] = dict({"name": name, "stream": stream, "logo": logo})
     sock.close()
     print(json.dumps(presets, sort_keys=True, indent=4, ensure_ascii=False))

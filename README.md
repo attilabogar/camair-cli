@@ -6,7 +6,7 @@ These two utilities allow you to reveal / set the radio preset settings on a
 Cambridge Audio Air v2 network streamer/speaker.  It might be compatible with
 Cambridge Audio Minx devices, though not tested as I don't own a Minx.
 
-## Why?
+## Background
 
 My Cambridge Audio Air v2 stopped playing Classic FM.  Wireshark came to the
 rescue, I noticed the device tries to play the Classic FM radio via an https
@@ -18,8 +18,9 @@ Classic FM.  🙂
 
 ## Usage
 
-- `camair-get.py` dumps the preset configuration as a JSON document.
-- `camair-set.py` changes any preset's `stream url`, `name` or the `logo url`
+- `camair-preset-dump.py` dumps the preset configuration as a JSON document.
+- `camair-preset-change.py` changes any preset's `stream url`, `name` or the `logo url`
+- `camair-play.py` plays an adhoc stream
 
 ## License
 
