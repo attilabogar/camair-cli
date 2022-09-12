@@ -23,7 +23,7 @@ stream for Classic FM from the http url I found in
 
 - `camair-preset-dump.py` dumps the preset configuration as a JSON document.
 - `camair-preset-change.py` changes any preset's `stream url`, `name` or the `logo url`
-- `camair-play.py` plays an adhoc stream
+- `camair-play.py` plays an adhoc stream or a preset
 
 ## License
 
